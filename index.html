@@ -73,12 +73,18 @@
                           text-neutral-900 dark:text-neutral-100
                           group-hover:text-brand-600
                           transition-colors duration-200">
-              barasa <span class="cursor-b font-extrabold"></span>
+              Barasa <span class="cursor-b font-extrabold"></span>
             </span>
           </a>
 
-          <!-- Brand show only if on desktop -->
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between hidden lg:block">
+          <h1 class="text-2xl font-extrabold text-gray-900 mb-3 tracking-tight dark:text-neutral-100">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="text-neutral-500 dark:text-neutral-300">Based in Nairobi</span>
+          </h1>
+        </div>
+
+        <div class="flex items-center justify-between hidden">
           <div id="terminal-wrapper" class="hidden lg:block">
             <div id="terminal" tabindex="0">
               <style>
@@ -191,7 +197,6 @@
                 <span id="input-container">
                   <span id="input" class="input"></span>
                   <span class="cursor font-extrabold"></span>
-                  <!-- Placeholder text requested -->
                   <span id="placeholder" class="placeholder">"help"</span>
                 </span>
               </div>
@@ -204,7 +209,6 @@
 
         </div>
 
-        <!-- Primary actions: always visible (Blog + Projects) -->
         <div class="flex items-center gap-2">
           <a
             href="#projects"
@@ -277,8 +281,8 @@
                   dark:hover:bg-purple-900/40 dark:hover:text-purple-300
                   transition-all duration-200"
           >
-              <i data-lucide="sparkles" class="w-4 h-4"></i>
-              My Philosophy
+              <i data-lucide="code" class="w-4 h-4"></i>
+              My Engineering
           </a>
 
           <a
@@ -394,17 +398,49 @@
 </div>
 
 
+    <!-- Clickable image -->
     <div class="relative w-fit mt-8 mb-8">
+      <button id="openImage" class="cursor-pointer">
+        <div class="absolute -top-4 -right-4 w-56 h-72 rounded-2xl bg-slate-200 rotate-[6deg] shadow-xl dark:bg-slate-800"></div>
+        <div class="absolute -top-2 -right-2 w-56 h-72 rounded-2xl bg-blue-200/70 rotate-[2deg] shadow-lg dark:bg-blue-900/30"></div>
 
-      <div class="absolute -top-4 -right-4 w-56 h-72 rounded-2xl bg-slate-200 rotate-[6deg] shadow-xl dark:bg-slate-800"></div>
-      <div class="absolute -top-2 -right-2 w-56 h-72 rounded-2xl bg-blue-200/70 rotate-[2deg] shadow-lg dark:bg-blue-900/30"></div>
+        <img
+          src="me1.jpeg"
+          alt="Portrait"
+          class="relative w-56 h-72 object-cover rounded-2xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10 hover:scale-105 transition"
+        />
+      </button>
+    </div>
 
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50"
+    >
       <img
         src="me1.jpeg"
         alt="Portrait"
-        class="relative w-56 h-72 object-cover rounded-2xl shadow-2xl ring-1 ring-black/5 dark:ring-white/10"
+        class="max-w-[90vw] max-h-[90vh] rounded-lg"
       />
     </div>
+
+    <script>
+      const openBtn = document.getElementById("openImage");
+      const modal = document.getElementById("imageModal");
+
+      openBtn.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+
+        document.body.classList.add("overflow-hidden");
+      });
+
+      modal.addEventListener("click", () => {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+
+        document.body.classList.remove("overflow-hidden");
+      });
+    </script>
 
     <div class="space-y-6 text-gray-700 dark:text-neutral-300">
       <p class="text-base flex items-center gap-2 font-semibold text-gray-900 font-bold dark:text-neutral-100">
@@ -424,10 +460,10 @@
 
 
           <p class="text-base leading-relaxed text-gray-800 dark:text-neutral-200 font-medium">
-            I design and build high-performance backend systems, cloud infrastructure,
+            I design and build high-performance backend systems, cloud infrastructure
             and DevOps pipelines
             <span class="text-gray-600 dark:text-neutral-400 font-normal">
-              engineered for security, scalability, reliability, and cost efficiency.
+              engineered for security, scalability, reliability and cost efficiency.
             </span>
           </p>
 
@@ -444,12 +480,12 @@
                   <div class="mb-6 border border-slate-200 bg-slate-50 p-6 shadow-sm
                     dark:border-neutral-800 dark:bg-neutral-900">
           <p class="text-[15px] leading-7 text-slate-700 dark:text-neutral-200">
-            I design and engineer mission-critical financial technology systems where
+            I engineer critical financial technology systems where
             <span class="font-semibold text-slate-900 dark:text-white">
               99.99% uptime is the baseline, not the objective
             </span>.
-            My work focuses on rigorous architectural standards, including microservices-driven system design
-            and the implementation of secure, observable, and scalable DevSecOps pipelines.
+            My work focuses on strict and demanding architectural standards; microservices-driven system design
+            and the implementation of secure, observable and scalable DevSecOps pipelines.
           </p>
         </div>
 
@@ -496,18 +532,14 @@
 
         <div class="mb-12" id="impact">
           <h2 class="text-2xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 pb-3 dark:border-neutral-800">
-            Impact Areas
+            I have worked in:
           </h2>
-
-          <p class="mt-4 mb-2 text-sm font-medium text-slate-800 dark:text-neutral-200">
-            I've worked in
-          </p>
 
 
           <div class="grid md:grid-cols-2 gap-3">
             <div class="border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700
                         dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300">
-              System Design as Senior Architect
+              System Design: Senior Architect
             </div>
 
             <div class="border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700
@@ -539,7 +571,6 @@
             Architecture and System Design
           </h2>
 
-          <!-- Panel: Cloud-Native Architecture -->
           <section class="mt-6 border border-slate-200 bg-slate-50 dark:border-neutral-800 dark:bg-neutral-900">
             <div class="border-b border-slate-200 px-4 py-3 dark:border-neutral-800">
               <h3 class="text-base font-bold text-slate-900 dark:text-neutral-100">
@@ -1383,12 +1414,12 @@
 
         <div class="mb-12" id="learning">
           <h2 class="text-2xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 pb-3 dark:border-neutral-800">
-            Continuous Learning and Certifications
+            Certifications
           </h2>
 
           <div class="grid md:grid-cols-2 gap-6">
             <div class="border border-gray-300 p-5 dark:border-neutral-800 dark:bg-neutral-950">
-              <h3 class="font-bold text-gray-900 mb-3 bg-gray-50 px-3 py-2 dark:text-neutral-100 dark:bg-neutral-900/40">Pursuing (2025)</h3>
+              <h3 class="font-bold text-gray-900 mb-3 bg-gray-50 px-3 py-2 dark:text-neutral-100 dark:bg-neutral-900/40">Completed (2024-2025)</h3>
               <div class="space-y-2 text-sm text-gray-700 dark:text-neutral-300">
                 <p>• AWS Certified Solutions Architect (Professional)</p>
                 <p>• Certified Information Systems Security Professional (CISSP)</p>
@@ -1398,7 +1429,7 @@
             </div>
 
             <div class="border border-gray-300 p-5 dark:border-neutral-800 dark:bg-neutral-950">
-              <h3 class="font-bold text-gray-900 mb-3 bg-gray-50 px-3 py-2 dark:text-neutral-100 dark:bg-neutral-900/40">Active Learning</h3>
+              <h3 class="font-bold text-gray-900 mb-3 bg-gray-50 px-3 py-2 dark:text-neutral-100 dark:bg-neutral-900/40">Others</h3>
               <div class="space-y-2 text-sm text-gray-700 dark:text-neutral-300">
                 <p>• SAFe Agile Framework (for enterprise architecture roles)</p>
                 <p>• Rust for high-performance microservices</p>
@@ -1411,7 +1442,7 @@
 
         <div class="mb-12" id="domain">
           <h2 class="text-2xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 pb-3 dark:border-neutral-800">
-            Domain Expertise - FinTech and Payments
+            Domain: FinTech and Payments
           </h2>
 
           <div class="border border-gray-300 p-6 dark:border-neutral-800 dark:bg-neutral-950">
@@ -1427,7 +1458,7 @@
               </div>
               <div class="space-y-2">
                 <p class="font-semibold text-gray-900 dark:text-neutral-100">Business Context:</p>
-                <p>• East African market dynamics (mobile-first, low bandwidth)</p>
+                <p>• market dynamics (mobile-first, low bandwidth)</p>
                 <p>• Super app strategies (financial services + commerce + utilities)</p>
                 <p>• Agent network management for cash-in/cash-out</p>
                 <p>• Cross-border remittance systems</p>
@@ -1446,7 +1477,7 @@
               <h3 class="font-bold text-gray-900 mb-3 dark:text-neutral-100">Architecture</h3>
               <div class="text-xs text-gray-700 space-y-2 dark:text-neutral-300">
                 <p>• Start with Minimum Viable Architecture-build incrementally</p>
-                <p>• Design for testability, deployability, and observability from day one</p>
+                <p>• Design for testability, deployability and observability from day one</p>
                 <p>• Embrace evolutionary design</p>
                 <p>• Decoupling deployments from releases</p>
               </div>
@@ -1500,7 +1531,7 @@
             <!-- Academic Focus -->
             <div class="mt-4">
               <h4 class="text-sm font-semibold text-slate-900 dark:text-neutral-100">
-                Core Academic Domains
+                Specialization
               </h4>
 
               <ul class="mt-2 list-disc pl-5 space-y-1 text-sm text-slate-700 dark:text-neutral-300">
@@ -1643,7 +1674,7 @@
     </div>
 
     <footer class="mt-24 text-sm text-gray-500 dark:text-neutral-400">
-      © 2026 Designed and developed by Peter Barasa.
+      © 2026 | Peter Barasa.
     </footer>
 
   </div>

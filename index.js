@@ -223,7 +223,7 @@ function handleCommand(command) {
       `;
       output.innerHTML = wrap(
         "help",
-        `GNU-ish commands. Try ${`<span class="t-kbd">menu --show</span>`} or ${`<span class="t-kbd">about</span>`}.`,
+        `Try ${`<span class="t-kbd">menu --show</span>`} or ${`<span class="t-kbd">about</span>`}.`,
         body,
         `Tip: Type <span class="t-kbd">help</span> anytime.`
       );
